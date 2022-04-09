@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html><head>
+
+	<!-- Metadata -->
+	<title>Gihiga Translator</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Bootstrap 5 -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+	<!-- Bootstrap Icons -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+	<!-- Scripts Javascript -->
+	<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.10/dist/clipboard.min.js"></script>
+	<script src="/script.js" type="text/javascript"></script>
+
+</head>
+
+<body class="bg-secondary">
+
+	<header>
+		<div class="bg-dark collapse" id="navbarHeader">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-8 col-md-7 py-4">
+						<h4 class="text-white">Sobre</h4>
+						<p class="text-muted">
+							Tradutor de texto para Linguagem GIHIGA.
+							Criado usando Javascript e Bootstrap 5.
+							Hostiado pelo ____ .
+						</p>
+					</div>
+					<div class="col-sm-4 offset-md-1 py-4">
+						<h4 class="text-white">Contatos</h4>
+						<ul class="list-unstyled">
+							<li><a class="text-info text-decoration-none" href="https://github.com/GabriOliv" target="_blank">
+								<i class="bi bi-github"></i> GitHub
+							</a></li>
+							<li><a class="text-light text-decoration-none" href="https://github.com/GabriOliv/gihiga-translator" target="_blank">
+								<i class="bi bi-archive"></i> Repositório do Projeto
+							</a></li></br>
+							<li><a class="text-light text-decoration-none" href="https://getbootstrap.com/docs/versions/" target="_blank">
+								<i class="bi bi-twitch"></i> Twitch da Gihiga
+							</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="navbar navbar-dark bg-dark shadow p-2 mb-3">
+			<div class="container">
+				<a href="" class="navbar-brand d-flex align-items-center" aria-label="Title">
+					<strong class="text-light text-decoration-none">
+						<h1>
+							<i class="bi bi-chat-right-heart" style="font-size: 2rem; color:whitesmoke;"></i>
+							<spam class="d-sm-none">Gih Trnsltr</spam>
+							<spam class="d-none d-sm-inline">Gihiga Translator</spam>
+						</h1>
+					</strong>
+				</a>
+
+				<button
+					class="btn btn-dark"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarHeader"
+					aria-controls="navbarHeader"
+					aria-expanded="true"
+					aria-label="Toggle Header Navigation">
+					<i class="bi bi-list" style="font-size: 1.5rem"></i>
+				</button>
+			</div>
+		</div>
+	</header>
+
+	<div class="container col-xs-4 p-1 my-4 bg-dark text-white">
+		<div class="input-group">
+			<span class="input-group-text">Antes</span>
+			<textarea
+				class="form-control"
+				id="input_field"
+				rows="4"
+				aria-label="With textarea"
+			>Você batendo e humilhando a gente... já me sinto mais em casa gih
+Comi 2 pão, 1 com requeijão e outro com manteiga e queijo, aí meti um copão de leite com nescau e umas bolachinhas</textarea>
+		</div>
+
+		<ul class="list-group list-group-horizontal m-2" aria-label="Main Button">
+			<button
+				class="btn btn-outline-success list-group-item list-group-item-success list-group-item-action text-center p-0 my-0"
+				type="button"
+				onclick="generate()"
+				aria-label="Generate Button">
+
+				<div class="d-inline"><i class="bi bi-arrow-down-square-fill"></i></div>
+				<div class="d-none d-sm-inline">Gerar Texto</div>
+			</button>
+
+			<button
+				class="btn btn-outline-danger list-group-item list-group-item-danger list-group-item-action text-center p-0 my-0"
+				type="button"
+				onclick="clear_all()"
+				aria-label="Clear Button">
+
+				<div class="d-inline"><i class="bi bi-x-square-fill"></i></div>
+				<div class="d-none d-sm-inline">Limpar</div>
+			</button>
+		</ul>
+
+		<div class="input-group">
+			<span class="input-group-text">Depois</span>
+
+			<textarea
+				class="form-control"
+				id="output_field"
+				rows="4"
+				aria-label="With textarea"
+			></textarea>
+
+			<button
+				type="button"
+				class="btn btn-outline-primary"
+				data-toggle="tooltip"
+				data-placement="button"
+				title="Copy to Clipboard"
+				data-clipboard-target="#output_field"
+				aria-label="Copy SHA-256 First 5">
+				<div class="d-inline"><i class="bi bi-clipboard"></i></div>
+				<div class="d-none d-sm-inline">Copiar</div>
+			</button>
+		</div>
+
+
+		<div class="accordion bg-light mt-4" id="accordionExample">
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="headingThree">
+					<button
+						class="accordion-button collapsed"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#collapseThree"
+						aria-expanded="false"
+						aria-controls="collapseThree">
+						Dicionário de Sílabas Alteradas
+					</button>
+				</h2>
+				<div
+					id="collapseThree"
+					class="accordion-collapse collapse"
+					aria-labelledby="headingThree"
+					data-bs-parent="#accordionExample">
+
+					<div class="accordion-body">
+						<ul class="list-group text-dark">
+							<li class="list-group-item">ca -> ga</li>
+							<li class="list-group-item">cê -> ze</li>
+							<li class="list-group-item">co -> go</li>
+							<li class="list-group-item">lha -> ia</li>
+							<li class="list-group-item">pã -> bã</li>
+							<li class="list-group-item">que -> gue</li>
+							<li class="list-group-item">te -> de</li>
+							<li class="list-group-item">tro -> dro</li>
+							<li class="list-group-item">.nho -> n</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		  </div>
+	</div>
+
+<script>
+	var btns = document.querySelectorAll('button');
+	var clipboard = new ClipboardJS(btns);
+
+	clipboard.on('success', function (e) {
+		console.info('Action:', e.action);
+		console.info('Text:', e.text);
+		console.info('Trigger:', e.trigger);
+	});
+
+	clipboard.on('error', function (e) {
+		console.info('Action:', e.action);
+		console.info('Text:', e.text);
+		console.info('Trigger:', e.trigger);
+	});
+</script>
+
+</body></html>
