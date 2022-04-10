@@ -26,8 +26,9 @@ function translate(text){
 	// ss(aeiou) -> z(aeiou)
 	// t(aeiou) -> d(aeiou)
 	// tr(aou) -> dr(aou)
-	// .nho -> n
 	// .gem -> gi
+	// .nho -> n
+	// .care -> guere
 	// --------------------------------
 
 	let translated = text.replace(/Gihiga/gi, "Giga");
@@ -84,6 +85,8 @@ function translate(text){
 	// translated = translated.replace(/brû/gi, "");
 	// translated = translated.replace(/brú/gi, "");
 	translated = translated.replace(/care( |$)/gi, "guere ");
+	translated = translated.replace(/carê( |$)/gi, "guere ");
+	translated = translated.replace(/caré( |$)/gi, "guere ");
 	translated = translated.replace(/ca/gi, "ga");
 	translated = translated.replace(/câ/gi, "gâ");
 	translated = translated.replace(/cá/gi, "gá");
