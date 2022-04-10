@@ -18,7 +18,7 @@ function translate(text){
 	// ca -> ga
 	// ce -> ze
 	// co -> go
-	// lha -> ia
+	// lh(ao) -> i(ao)
 	// p(aeiou) -> b(aeiou)
 	// pr(ae) -> br(ae)
 	// que -> gue
@@ -414,19 +414,19 @@ function translate(text){
 	// translated = translated.replace(/lû/gi, "");
 	// translated = translated.replace(/lú/gi, "");
 	translated = translated.replace(/lha/gi, "ia");
-	// translated = translated.replace(/lhâ/gi, "");
-	// translated = translated.replace(/lhá/gi, "");
-	// translated = translated.replace(/lhã/gi, "");
+	translated = translated.replace(/lhâ/gi, "iâ");
+	translated = translated.replace(/lhá/gi, "iá");
+	translated = translated.replace(/lhã/gi, "iã");
 	// translated = translated.replace(/lhe/gi, "");
 	// translated = translated.replace(/lhê/gi, "");
 	// translated = translated.replace(/lhé/gi, "");
 	// translated = translated.replace(/lhi/gi, "");
 	// translated = translated.replace(/lhî/gi, "");
 	// translated = translated.replace(/lhí/gi, "");
-	// translated = translated.replace(/lho/gi, "");
-	// translated = translated.replace(/lhô/gi, "");
-	// translated = translated.replace(/lhó/gi, "");
-	// translated = translated.replace(/lhõ/gi, "");
+	translated = translated.replace(/lho/gi, "io");
+	translated = translated.replace(/lhô/gi, "iô");
+	translated = translated.replace(/lhó/gi, "ió");
+	translated = translated.replace(/lhõ/gi, "iõ");
 	// translated = translated.replace(/lhu/gi, "");
 	// translated = translated.replace(/lhû/gi, "");
 	// translated = translated.replace(/lhú/gi, "");
