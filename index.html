@@ -84,7 +84,10 @@
 
 	<div class="container col-xs-4 p-1 my-4 bg-dark text-white">
 		<div class="input-group">
-			<span class="input-group-text">Antes</span>
+			<span class="input-group-text">
+				<div class="d-sm-none"><i class="bi bi-chat-left-text"></i></div>
+				<div class="d-none d-sm-inline">Antes</div>
+			</span>
 			<textarea
 				class="form-control"
 				id="input_field"
@@ -93,7 +96,7 @@
 			></textarea>
 		</div>
 
-		<ul class="list-group list-group-horizontal m-2" aria-label="Main Button">
+		<ul class="list-group list-group-horizontal m-2" aria-label="Main Buttons">
 			<button
 				class="btn btn-outline-success list-group-item list-group-item-success list-group-item-action text-center p-0 my-0"
 				type="button"
@@ -116,7 +119,10 @@
 		</ul>
 
 		<div class="input-group">
-			<span class="input-group-text">Depois</span>
+			<span class="input-group-text">
+				<div class="d-sm-none"><i class="bi bi-chat-left-heart"></i></div>
+				<div class="d-none d-sm-inline">Depois</div>
+			</span>
 
 			<textarea
 				class="form-control"
@@ -138,7 +144,7 @@
 			</button>
 		</div>
 
-		<div class="accordion bg-light mt-4" id="accordionExample">
+		<div class="accordion bg-light mt-4" id="accordion">
 			<div class="accordion-item">
 				<h2 class="accordion-header" id="headingThree">
 					<button
@@ -155,7 +161,7 @@
 					id="collapseThree"
 					class="accordion-collapse collapse"
 					aria-labelledby="headingThree"
-					data-bs-parent="#accordionExample">
+					data-bs-parent="#accordion">
 
 					<div class="accordion-body">
 						<ul class="list-group text-dark">
