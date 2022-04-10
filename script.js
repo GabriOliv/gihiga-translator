@@ -16,15 +16,18 @@ function clear_all(){
 function translate(text){
 	// Dicionário de Sílabas Atual
 	// ca -> ga
-	// cê -> ze
+	// ce -> ze
 	// co -> go
 	// lha -> ia
-	// pa -> ba
+	// p(aeiou) -> b(aeiou)
+	// pr(ae) -> br(ae)
 	// que -> gue
-	// te -> de
-	// tro -> dro
-	// tru -> dru
+	// s. -> z
+	// ss(aeiou) -> z(aeiou)
+	// t(aeiou) -> d(aeiou)
+	// tr(aou) -> dr(aou)
 	// .nho -> n
+	// .gem -> gi
 	// --------------------------------
 
 	let translated = text.replace(/Gihiga/gi, "Giga");
@@ -80,13 +83,14 @@ function translate(text){
 	// translated = translated.replace(/bru/gi, "");
 	// translated = translated.replace(/brû/gi, "");
 	// translated = translated.replace(/brú/gi, "");
+	translated = translated.replace(/care( |$)/gi, "guere ");
 	translated = translated.replace(/ca/gi, "ga");
 	translated = translated.replace(/câ/gi, "gâ");
 	translated = translated.replace(/cá/gi, "gá");
 	translated = translated.replace(/cã/gi, "gã");
-	// translated = translated.replace(/ce/gi, "");
+	translated = translated.replace(/ce/gi, "ze");
 	translated = translated.replace(/cê/gi, "zê");
-	// translated = translated.replace(/cé/gi, "");
+	translated = translated.replace(/cé/gi, "zé");
 	// translated = translated.replace(/ci/gi, "");
 	// translated = translated.replace(/cî/gi, "");
 	// translated = translated.replace(/cí/gi, "");
@@ -239,6 +243,7 @@ function translate(text){
 	// translated = translated.replace(/gá/gi, "");
 	// translated = translated.replace(/gã/gi, "");
 	// translated = translated.replace(/ge/gi, "");
+	translated = translated.replace(/gem( |$)/gi, "gi ");
 	// translated = translated.replace(/gê/gi, "");
 	// translated = translated.replace(/gé/gi, "");
 	// translated = translated.replace(/gi/gi, "");
@@ -480,19 +485,19 @@ function translate(text){
 	translated = translated.replace(/pâ/gi, "bâ");
 	translated = translated.replace(/pá/gi, "bá");
 	translated = translated.replace(/pã/gi, "bã");
-	// translated = translated.replace(/pe/gi, "");
-	// translated = translated.replace(/pê/gi, "");
-	// translated = translated.replace(/pé/gi, "");
-	// translated = translated.replace(/pi/gi, "");
-	// translated = translated.replace(/pî/gi, "");
-	// translated = translated.replace(/pí/gi, "");
-	// translated = translated.replace(/po/gi, "");
-	// translated = translated.replace(/pô/gi, "");
-	// translated = translated.replace(/pó/gi, "");
-	// translated = translated.replace(/põ/gi, "");
-	// translated = translated.replace(/pu/gi, "");
-	// translated = translated.replace(/pû/gi, "");
-	// translated = translated.replace(/pú/gi, "");
+	translated = translated.replace(/pe/gi, "be");
+	translated = translated.replace(/pê/gi, "bê");
+	translated = translated.replace(/pé/gi, "bé");
+	translated = translated.replace(/pi/gi, "bi");
+	translated = translated.replace(/pî/gi, "bî");
+	translated = translated.replace(/pí/gi, "bí");
+	translated = translated.replace(/po/gi, "bo");
+	translated = translated.replace(/pô/gi, "bô");
+	translated = translated.replace(/pó/gi, "bó");
+	translated = translated.replace(/põ/gi, "bõ");
+	translated = translated.replace(/pu/gi, "bu");
+	translated = translated.replace(/pû/gi, "bû");
+	translated = translated.replace(/pú/gi, "bú");
 	// translated = translated.replace(/pla/gi, "");
 	// translated = translated.replace(/plâ/gi, "");
 	// translated = translated.replace(/plá/gi, "");
@@ -510,13 +515,13 @@ function translate(text){
 	// translated = translated.replace(/plu/gi, "");
 	// translated = translated.replace(/plû/gi, "");
 	// translated = translated.replace(/plú/gi, "");
-	// translated = translated.replace(/pra/gi, "");
-	// translated = translated.replace(/prâ/gi, "");
-	// translated = translated.replace(/prá/gi, "");
-	// translated = translated.replace(/prã/gi, "");
-	// translated = translated.replace(/pre/gi, "");
-	// translated = translated.replace(/prê/gi, "");
-	// translated = translated.replace(/pré/gi, "");
+	translated = translated.replace(/pra/gi, "bra");
+	translated = translated.replace(/prâ/gi, "brâ");
+	translated = translated.replace(/prá/gi, "brá");
+	translated = translated.replace(/prã/gi, "brã");
+	translated = translated.replace(/pre/gi, "bre");
+	translated = translated.replace(/prê/gi, "brê");
+	translated = translated.replace(/pré/gi, "bré");
 	// translated = translated.replace(/pri/gi, "");
 	// translated = translated.replace(/prî/gi, "");
 	// translated = translated.replace(/prí/gi, "");
@@ -579,8 +584,44 @@ function translate(text){
 	// translated = translated.replace(/rû/gi, "");
 	// translated = translated.replace(/rú/gi, "");
 	// translated = translated.replace(/sa/gi, "");
+	translated = translated.replace(/ssa/gi, "za");
+	translated = translated.replace(/ssâ/gi, "zâ");
+	translated = translated.replace(/ssá/gi, "zá");
+	translated = translated.replace(/ssã/gi, "zã");
+	translated = translated.replace(/sse/gi, "ze");
+	translated = translated.replace(/ssê/gi, "zê");
+	translated = translated.replace(/ssé/gi, "zé");
+	translated = translated.replace(/ssi/gi, "zi");
+	translated = translated.replace(/ssî/gi, "zî");
+	translated = translated.replace(/ssí/gi, "zí");
+	translated = translated.replace(/sso/gi, "zo");
+	translated = translated.replace(/ssô/gi, "zô");
+	translated = translated.replace(/ssó/gi, "zó");
+	translated = translated.replace(/ssõ/gi, "zõ");
+	translated = translated.replace(/ssu/gi, "zu");
+	translated = translated.replace(/ssû/gi, "zû");
+	translated = translated.replace(/ssú/gi, "zú");
+	translated = translated.replace(/\bsa/gi, "za");
+	translated = translated.replace(/\bsâ/gi, "zâ");
+	translated = translated.replace(/\bsá/gi, "zá");
+	translated = translated.replace(/\bsã/gi, "zã");
+	translated = translated.replace(/\bse/gi, "ze");
+	translated = translated.replace(/\bsê/gi, "zê");
+	translated = translated.replace(/\bsé/gi, "zé");
+	translated = translated.replace(/\bsi/gi, "zi");
+	translated = translated.replace(/\bsî/gi, "zî");
+	translated = translated.replace(/\bsí/gi, "zí");
+	translated = translated.replace(/\bso/gi, "zo");
+	translated = translated.replace(/\bsô/gi, "zô");
+	translated = translated.replace(/\bsó/gi, "zó");
+	translated = translated.replace(/\bsõ/gi, "zõ");
+	translated = translated.replace(/\bsu/gi, "zu");
+	translated = translated.replace(/\bsû/gi, "zû");
+	translated = translated.replace(/\bsú/gi, "zú");
+	// translated = translated.replace(/sa/gi, "");
 	// translated = translated.replace(/sâ/gi, "");
 	// translated = translated.replace(/sá/gi, "");
+	// translated = translated.replace(/sã/gi, "");
 	// translated = translated.replace(/sã/gi, "");
 	// translated = translated.replace(/se/gi, "");
 	// translated = translated.replace(/sê/gi, "");
@@ -595,27 +636,27 @@ function translate(text){
 	// translated = translated.replace(/su/gi, "");
 	// translated = translated.replace(/sû/gi, "");
 	// translated = translated.replace(/sú/gi, "");
-	// translated = translated.replace(/ta/gi, "");
-	// translated = translated.replace(/tâ/gi, "");
-	// translated = translated.replace(/tá/gi, "");
-	// translated = translated.replace(/tã/gi, "");
+	translated = translated.replace(/ta/gi, "da");
+	translated = translated.replace(/tâ/gi, "dâ");
+	translated = translated.replace(/tá/gi, "dá");
+	translated = translated.replace(/tã/gi, "dã");
 	translated = translated.replace(/te/gi, "de");
 	translated = translated.replace(/tê/gi, "dê");
 	translated = translated.replace(/té/gi, "dé");
-	// translated = translated.replace(/ti/gi, "");
-	// translated = translated.replace(/tî/gi, "");
-	// translated = translated.replace(/tí/gi, "");
-	// translated = translated.replace(/to/gi, "");
-	// translated = translated.replace(/tô/gi, "");
-	// translated = translated.replace(/tó/gi, "");
-	// translated = translated.replace(/tõ/gi, "");
-	// translated = translated.replace(/tu/gi, "");
-	// translated = translated.replace(/tû/gi, "");
-	// translated = translated.replace(/tú/gi, "");
-	// translated = translated.replace(/tra/gi, "");
-	// translated = translated.replace(/trâ/gi, "");
-	// translated = translated.replace(/trá/gi, "");
-	// translated = translated.replace(/trã/gi, "");
+	translated = translated.replace(/ti/gi, "di");
+	translated = translated.replace(/tî/gi, "dî");
+	translated = translated.replace(/tí/gi, "dí");
+	translated = translated.replace(/to/gi, "do");
+	translated = translated.replace(/tô/gi, "dô");
+	translated = translated.replace(/tó/gi, "dó");
+	translated = translated.replace(/tõ/gi, "dõ");
+	translated = translated.replace(/tu/gi, "du");
+	translated = translated.replace(/tû/gi, "dû");
+	translated = translated.replace(/tú/gi, "dú");
+	translated = translated.replace(/tra/gi, "dra");
+	translated = translated.replace(/trâ/gi, "drâ");
+	translated = translated.replace(/trá/gi, "drá");
+	translated = translated.replace(/trã/gi, "drã");
 	// translated = translated.replace(/tre/gi, "");
 	// translated = translated.replace(/trê/gi, "");
 	// translated = translated.replace(/tré/gi, "");
