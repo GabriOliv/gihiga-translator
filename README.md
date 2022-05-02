@@ -9,9 +9,8 @@ Gerador de Texto da Live Gihiga
 ---
 
 ### Dicionário de Sílabas Atual
-- ca -> ga
 - ce -> ze
-- co -> go
+- c(aou) -> g(aou)
 - lh(ao) -> i(ao)
 - p(aeiou) -> b(aeiou)
 - pr(ae) -> br(ae)
