@@ -1,4 +1,3 @@
-
 function generate(){
 	let input_text = document.getElementById("input_field").value;
 
@@ -30,6 +29,8 @@ function translate(text){
 	// .nho -> n
 	// .care -> guere
 	// --------------------------------
+	// ca -> ga
+	// co -> go => c(aou) -> g(aou)
 
 	let translated = text.replace(/Gihiga/gi, "Giga");
 	// translated = translated.replace(/a/gi, "");
