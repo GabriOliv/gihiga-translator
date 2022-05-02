@@ -14,9 +14,8 @@ function clear_all(){
 
 function translate(text){
 	// Dicionário de Sílabas Atual
-	// ca -> ga
 	// ce -> ze
-	// co -> go
+	// c(aou) -> g(aou)
 	// lh(ao) -> i(ao)
 	// p(aeiou) -> b(aeiou)
 	// pr(ae) -> br(ae)
@@ -29,8 +28,6 @@ function translate(text){
 	// .nho -> n
 	// .care -> guere
 	// --------------------------------
-	// ca -> ga
-	// co -> go => c(aou) -> g(aou)
 
 	let translated = text.replace(/Gihiga/gi, "Giga");
 	// translated = translated.replace(/a/gi, "");
